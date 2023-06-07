@@ -477,7 +477,7 @@ const params = {
     descriptions: "Test!"
 }
 
-await likee.saveVideo(params)
+await likee.saveVideo(params) // { code: 0, data: null, message: null }
 ```
 > Данный метод требует cookie!
 
@@ -485,6 +485,10 @@ await likee.saveVideo(params)
 * [Примеры](https://github.com/tailsjs/likee-api-wrapper/)
 * [Likee](https://likee.video/)
 * [Блог автора](https://t.me/tjsblog/)
+
+## Идеи
+* Сохранение cookie в памяти (до входа)
+* Написать примеры
 
 ## Интересные факты
 * Данный враппер изначально подразумевался как модуль по скачке видео с Likee.
