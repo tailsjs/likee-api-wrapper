@@ -1,6 +1,6 @@
 {
   "name": "likee-api-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Враппер Likee API",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,6 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "md5": "^2.3.0",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^2.6.6"
   }
 }

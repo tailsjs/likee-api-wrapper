@@ -878,8 +878,49 @@ async function likeVideo(params = {
     })
 
     return await result.json()
-    // https://api.like-video.com/likee-activity-flow-micro/videoApi/likeVideo
-    // {postId: "7241250162078046516", type: 1}
+}
+
+async function topSearch(){
+    const result = await fetch(`https://api.like-video.com/likee-activity-flow-micro/commonApi/topSearch`, {
+        method: "POST"
+    })
+
+    return await result.json()
+}
+
+async function getUserPostNum(params = {
+    uid: "30004"
+}){
+    const result = await fetch("https://api.like-video.com/likee-activity-flow-micro/userApi/getUserPostNum", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            uid: params.uid ? params.uid : "30004"
+        })
+    })
+
+    return await result.json()
+}
+
+async function sendDownloadSms(params = {
+    telephone: "",
+    lang: "ru"
+}){
+    if(!params.telephone)throw new Error("Param 'telephone' is empty!")
+    const result = await fetch("https://api.like-video.com/likee-activity-flow-micro/commonApi/sendDownloadSms", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            telephone: params.telephone,
+            lang: params.lang ? params.lang : "ru"
+        })
+    })
+
+    return await result.json()
 }
 
 module.exports = {
@@ -924,5 +965,8 @@ module.exports = {
     likeVideo,
     getUploadVideoToken,
     bigoNew,
-    saveVideo
+    saveVideo,
+    topSearch,
+    getUserPostNum,
+    sendDownloadSms
 }

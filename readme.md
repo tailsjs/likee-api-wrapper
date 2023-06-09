@@ -480,9 +480,34 @@ const params = {
 await likee.saveVideo(params) // { code: 0, data: null, message: null }
 ```
 > Данный метод требует cookie!
+### Likee.topSearch()
+Получить что-то вроде топа.
+```js
+await likee.topSearch() // { code: 0, data: { tagsList: [] }, message: "ok" }
+```
+### Likee.getUserPostNum(params)
+Получить информацию о лайках пользователя.
+```js
+const params = {
+    uid: "30004"
+}
+
+await likee.getUserPostNum(params) // { code: 0, data: { postInfoMap: {...} }, message: "ok" }
+```
+### Likee.sendDownloadSms(params)
+Отправить ссылку на скачку Likee на номер телефона
+```js
+const params = {
+    telephone: "...",
+    lang: "ru"
+}
+
+await likee.sendDownloadSms(params) // ???
+```
+> Во время тестов, мне выдавалась ошибка `{ code: 60005, data: null, message: 'frequency' }`.
 
 ## Полезные ссылки
-* [Примеры](https://github.com/tailsjs/likee-api-wrapper/)
+* [Репозиторий](https://github.com/tailsjs/likee-api-wrapper/)
 * [Likee](https://likee.video/)
 * [Блог автора](https://t.me/tjsblog/)
 
